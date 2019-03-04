@@ -31,9 +31,9 @@ public class SpitterControllerTest {
         SpitterServiceImpl spitterServiceImp = mock(SpitterServiceImpl.class);
 
         Spitter unsaved =
-                new Spitter("Jack", "Bauer", "jbauer", "24hours");
+                new Spitter("Jack", "Bauer", "jbauer", "24hours", "");
         Spitter saved =
-                new Spitter("Jack1", "Bauer", "jbauer", "24hours");
+                new Spitter("Jack1", "Bauer", "jbauer", "24hours", "");
 
         when(spitterServiceImp.save(unsaved)).thenReturn(saved);
         SpitterController controller =

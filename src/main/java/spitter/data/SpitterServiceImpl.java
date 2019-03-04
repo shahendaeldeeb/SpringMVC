@@ -6,9 +6,10 @@ import spitter.model.Spitter;
 @Service("spitterServiceImpl")
 public class SpitterServiceImpl {
     public Spitter findByUsername(final String username) {
+        return new Spitter("spittertest", "1", "spitter@gmail.com", "spitter", "12345");
         //todo: connect to database
         //return spitterRepository.findByUsername(username);
-        return null;
+       // return null;
     }
 
     public Spitter save(Spitter spitter) {

@@ -1,0 +1,13 @@
+/home/shahenda/Desktop/SpringMVC/src/main/java/spitter/web/controllers/SpittleController.java
+/home/shahenda/Desktop/SpringMVC/src/main/java/spitter/model/Spitter.java
+/home/shahenda/Desktop/SpringMVC/src/main/java/spitter/data/SpittleServiceImpl.java
+/home/shahenda/Desktop/SpringMVC/src/main/java/spitter/web/controllers/HomeController.java
+/home/shahenda/Desktop/SpringMVC/src/main/java/spitter/web/tests/controllersTest/HomeControllerTest.java
+/home/shahenda/Desktop/SpringMVC/src/main/java/spitter/config/WebConfig.java
+/home/shahenda/Desktop/SpringMVC/src/main/java/spitter/model/Spittle.java
+/home/shahenda/Desktop/SpringMVC/src/main/java/spitter/config/SpittrWebAppInitializer.java
+/home/shahenda/Desktop/SpringMVC/src/main/java/spitter/web/tests/controllersTest/SpitterControllerTest.java
+/home/shahenda/Desktop/SpringMVC/src/main/java/spitter/config/RootConfig.java
+/home/shahenda/Desktop/SpringMVC/src/main/java/spitter/data/SpitterServiceImpl.java
+/home/shahenda/Desktop/SpringMVC/src/main/java/spitter/web/tests/controllersTest/SpittleControllerTest.java
+/home/shahenda/Desktop/SpringMVC/src/main/java/spitter/web/controllers/SpitterController.java

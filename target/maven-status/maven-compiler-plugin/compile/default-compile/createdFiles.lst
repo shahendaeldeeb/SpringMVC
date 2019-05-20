@@ -1,0 +1,13 @@
+spitter/web/controllers/SpittleController.class
+spitter/model/Spittle.class
+spitter/data/SpitterServiceImpl.class
+spitter/web/tests/controllersTest/SpittleControllerTest.class
+spitter/web/controllers/HomeController.class
+spitter/config/RootConfig.class
+spitter/web/tests/controllersTest/HomeControllerTest.class
+spitter/web/controllers/SpitterController.class
+spitter/config/SpittrWebAppInitializer.class
+spitter/web/tests/controllersTest/SpitterControllerTest.class
+spitter/model/Spitter.class
+spitter/config/WebConfig.class
+spitter/data/SpittleServiceImpl.class

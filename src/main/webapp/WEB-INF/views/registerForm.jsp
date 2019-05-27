@@ -4,8 +4,8 @@
 <html>
 <head>
     <title>Spittr</title>
-    <%--<link rel="stylesheet" type="text/css"--%>
-    <%--href="<c:url value="/resources/style.css" />" >--%>
+<%--    <link rel="stylesheet" type="text/css"--%>
+<%--    href="<c:url value="/resources/style.css" />" >--%>
     <style>
         span.errors {
             color: red;

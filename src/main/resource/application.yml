@@ -6,12 +6,3 @@ spring:
   jpa:
     hibernate.ddl-auto: update
     show-sql: true
-org:
-  apache:
-    jasper:
-      compiler:
-        TldLocationsCache:
-          level: FINE
-      servlet:
-        TldScanner:
-          level: FINE

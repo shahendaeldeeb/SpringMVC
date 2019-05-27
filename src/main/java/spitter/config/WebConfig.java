@@ -9,37 +9,38 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
+
+import java.io.IOException;
 
 @Configuration
 @EnableWebMvc
 @ComponentScan("spitter.web")
 public class WebConfig extends WebMvcConfigurerAdapter {
-    /**
-     * Configure a JSP view resolver
-     *
-     * it’s configured to look for JSP files by wrapping
-     * view names with a specific prefix and suffix
-     * @return
-     */
-    @Bean
-    public ViewResolver viewResolver() {
-        return new TilesViewResolver();
+//    /**
+//     * Configure a JSP view resolver
+//     *
+//     * it’s configured to look for JSP files by wrapping
+//     * view names with a specific prefix and suffix
+//     * @return
+//     */
+//    @Bean
+//    public ViewResolver viewResolver() {
 //        InternalResourceViewResolver resolver =
 //                new InternalResourceViewResolver();
 //        resolver.setPrefix("/WEB-INF/views/");
 //        resolver.setSuffix(".jsp");
 //        resolver.setExposeContextBeansAsAttributes(true);
 //        return resolver;
-    }
+//    }
 
     /**
      * Configure JSP layout
      *
      * It loads tile definitions and coordinates with Apache Tiles,
      * @return
+     * @throws IOException
      */
     @Bean
     public TilesConfigurer tilesConfigurer() {
@@ -68,5 +69,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
                 new ResourceBundleMessageSource();
         messageSource.setBasename("messages");
         return messageSource;
+    }
+
+    @Bean
+    public ViewResolver viewResolver() {
+        return new TilesViewResolver();
     }
 }

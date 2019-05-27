@@ -4,11 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import spitter.model.Spitter;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
+import spitter.data.SpitterRepository;
 import spitter.data.SpitterServiceImpl;
+import spitter.model.Spitter;
 
 import javax.validation.Valid;
 
@@ -19,33 +21,42 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @RequestMapping("/spitter")
 public class SpitterController {
     @Autowired
-    private SpitterServiceImpl imp;
+    private SpitterRepository spitterRepository;
+
 
     @Autowired
     public SpitterController(SpitterServiceImpl spitterServiceImpl) {
-        this.imp = spitterServiceImpl;
+        this.spitterRepository = spitterServiceImpl;
     }
-    @RequestMapping(value="/register", method=GET)
+
+    @RequestMapping(value = "/register", method = GET)
     public String showRegistrationForm(Model model) {
-        model.addAttribute( new Spitter());
+        model.addAttribute(new Spitter());
         return "registerForm";
     }
 
-    @RequestMapping(value="/register", method=POST)
-    public String processRegistration(@ModelAttribute @Valid Spitter spitter, Errors errors) {
+
+    @RequestMapping(value = "/register", method = POST)
+    public String processRegistration(
+            @RequestPart("profile_picture") MultipartFile profilePicture,
+            @Valid Spitter spitter,
+            Errors errors) {
+
         if (errors.hasErrors()) {
             return "registerForm";
         }
-        imp.save(spitter);
+
+
+        spitterRepository.save(spitter);
         System.out.println("spitter after save : " + spitter);
         return "redirect:/spitter/" +
                 spitter.getUsername();
     }
 
-    @RequestMapping(value="/{username}", method=GET)
+    @RequestMapping(value = "/{username}", method = GET)
     public String showSpitterProfile(
             @PathVariable String username, Model model) {
-        Spitter spitter = imp.findByUsername(username);
+        Spitter spitter = spitterRepository.findByUsername(username);
         System.out.println("in get spitter : " + spitter);
         model.addAttribute(spitter);
         return "profile";

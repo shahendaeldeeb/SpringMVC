@@ -28,8 +28,12 @@
 <body>
 <h1>Register</h1>
 
-<sf:form method="POST" modelAttribute="spitter">
+<sf:form method="POST" modelAttribute="spitter" enctype="multipart/form-data">
     <sf:errors path="*" element="div" cssClass="errors" />
+
+    <sf:label path="profile_picture" cssErrorClass="error">Profile Picture</sf:label>:
+    <sf:input path="profile_picture" name="profilePicture" type="file" accept="image/jpeg,image/png,image/gif" /><br>
+
 
     <sf:label path="first_name" cssErrorClass="error">First Name</sf:label>:
     <sf:input path="first_name" cssErrorClass="error"/><br>
@@ -52,3 +56,4 @@
 </sf:form>
 </body>
 </html>
+

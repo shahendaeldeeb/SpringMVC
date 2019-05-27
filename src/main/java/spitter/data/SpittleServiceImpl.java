@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service("spittleServiceImpl")
-public class SpittleServiceImpl {
+public class SpittleServiceImpl implements SpittleRepository {
     public List<Spittle> findSpittles(long max, int count) {
         List<Spittle> spittleList = new ArrayList<Spittle>();
         Spittle s = new Spittle("hello first spitter", new Date());
@@ -22,5 +22,14 @@ public class SpittleServiceImpl {
         Spittle s2 = new Spittle("hello second spitter", new Date());
         return s2;
     }
+
+    public void save(Spittle spittle) {
+    }
+
+    public List<Spittle> findRecentSpittles() {
+        List<Spittle> spittleList = new ArrayList<Spittle>();
+        return spittleList;
+    }
+
 }
 

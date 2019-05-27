@@ -1,5 +1,7 @@
 package spitter.model;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -8,6 +10,8 @@ import javax.validation.constraints.Size;
 public class Spitter {
 
     private Long id;
+
+    private MultipartFile profile_picture;
     @NotNull
     @NotEmpty
     @Size(min = 5, max = 16, message = "{username.size}")
@@ -38,6 +42,15 @@ public class Spitter {
         this.username = username;
         this.password = password;
         this.email = email;
+    }
+
+
+    public MultipartFile getProfile_picture() {
+        return profile_picture;
+    }
+
+    public void setProfile_picture(MultipartFile profile_picture) {
+        this.profile_picture = profile_picture;
     }
 
     public String getFirst_name() {
